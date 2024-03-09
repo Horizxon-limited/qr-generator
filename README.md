@@ -5,7 +5,7 @@
 [![Website Status](https://img.shields.io/badge/Website%20Status-Online-green)](https://qr.draxler.lol/)
 
  
-![Screenshot of Website](https://github.com/vinodjangid07/QR-Generator/assets/86096184/a9ab9933-059a-47f1-a551-0de70716514c)
+![Screenshot of Website](https://d1ck.me/xK.png)
 
 :star: Star me on GitHub — it helps!
 
