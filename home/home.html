@@ -92,7 +92,14 @@
             <div class="bar11"></div>
             <div class="bar12"></div>
           </div>
-          <img src="" alt="" class="qr-code" id="qr-code" />
+          <img
+            src=""
+            alt=""
+            class="qr-code"
+            id="qr-code"
+            style="display: none"
+          />
+          <div id="qr-canvas" class="qr-code" style="display: none"></div>
           <div class="buttonContainer">
             <div class="downloadBtnContainer">
               <h1 class="downloadHeading">Download</h1>
@@ -120,6 +127,12 @@
       </div>
     </footer>
   </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
   <script src="script.js"></script>
   <script src="FileSaver.js"></script>
 </html>

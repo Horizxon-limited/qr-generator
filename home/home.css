@@ -18,7 +18,6 @@
 }
 
 html {
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
@@ -254,7 +253,7 @@ main::before {
 
 .submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 25px 50px -12px rgba(102, 126, 234, 0.4),
+  box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -338,7 +337,7 @@ main::before {
   top: 30%;
   opacity: 0;
   border-radius: 50px;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
   animation: fade458 1s linear infinite;
 }
 
@@ -404,13 +403,24 @@ main::before {
   animation-delay: -0.1s;
 }
 
-.qr-code {
+.qr-code,
+#qr-canvas {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   background: white;
   padding: var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+#qr-canvas img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
 }
 
 .buttonContainer {
@@ -683,8 +693,18 @@ main::before {
     height: 50px;
   }
 
-  .qr-code {
+  .qr-code,
+  #qr-canvas {
     max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+  }
+
+  #qr-canvas img {
+    max-width: 100%;
+    height: auto;
   }
 
   .exit {
