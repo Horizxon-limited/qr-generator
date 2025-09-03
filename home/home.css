@@ -27,6 +27,7 @@ html {
   --primary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
   --secondary-gradient: linear-gradient(135deg, #34d399 0%, #10b981 100%);
   --accent-gradient: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
   --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
   --surface-gradient: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
 
@@ -487,6 +488,76 @@ main::before {
   transform: translateY(0);
 }
 
+.copy-btn.copied {
+  background: var(--success-gradient) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.copy-btn.copied::before {
+  content: "✅ ";
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--surface-gradient);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  z-index: 10000;
+  transform: translateX(400px);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-lg);
+  max-width: 300px;
+}
+
+@media screen and (max-width: 500px) {
+  .toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    transform: translateY(-100px);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .toast.show {
+    transform: translateY(0);
+  }
+
+  .toast-message {
+    font-size: 1.2rem;
+  }
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.hidden {
+  display: none;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.toast-icon {
+  font-size: 1.2rem;
+}
+
+.toast-message {
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
 .exit {
   position: absolute;
   top: var(--space-lg);
@@ -645,23 +716,54 @@ main::before {
   .buttonRow {
     flex-direction: column;
     gap: var(--space-sm);
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .download {
     width: 100%;
     min-width: 120px;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    height: 40px;
+  }
+
+  .copy-btn {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border-color: transparent !important;
+    font-weight: 700;
   }
 
   .downloadBtnContainer {
-    max-width: 250px;
+    max-width: 300px;
+    width: 100%;
   }
 
   .qr-modal {
-    padding: var(--space-lg);
+    padding: var(--space-md);
+    margin: var(--space-md);
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
   }
 
   .downloadHeading {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .exit {
+    width: 35px;
+    height: 35px;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    z-index: 100;
+  }
+
+  .qr-code,
+  #qr-canvas {
+    max-width: calc(100vw - 6rem);
+    margin-bottom: var(--space-md);
   }
 }
 
@@ -714,6 +816,25 @@ main::before {
     right: var(--space-md);
   }
 
+  .qr-modal {
+    padding: var(--space-sm);
+    margin: var(--space-sm);
+  }
+
+  .download {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    height: 36px;
+  }
+
+  .downloadHeading {
+    font-size: 1.6rem;
+  }
+
+  .buttonRow {
+    max-width: 260px;
+  }
+
   .footerContainer p {
     font-size: 1.2rem;
     padding: 0 var(--space-sm);
@@ -741,9 +862,33 @@ main::before {
 
   .qr-modal {
     padding: var(--space-md);
+    margin: var(--space-xs);
+    max-width: calc(100vw - 1rem);
   }
 
   .downloadHeading {
     font-size: 1.8rem;
+  }
+
+  .download {
+    height: 35px;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .buttonRow {
+    max-width: 220px;
+  }
+
+  .exit {
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .qr-code,
+  #qr-canvas {
+    max-width: calc(100vw - 3rem);
   }
 }
